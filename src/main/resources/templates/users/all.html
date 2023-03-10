@@ -29,7 +29,9 @@
         <td th:text="${user.age}"></td>
         <td th:text="${user.city}"></td>
         <td><a th:href="@{/users/{id}/edit(id=${user.getId()})}">Изменить</a></td>
-        <td><a th:href="@{/users/{id}/(id=${user.getId()})}">Удалить</a></td>
+        <td><form th:action="@{/users/{id}/(id=${user.getId()})}" th:method="delete">
+            <input type="submit"  value="Удалить" />
+        </form></td>
     </tr>
         </tbody>
     </table>
